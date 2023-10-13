@@ -11,7 +11,7 @@ backend "http" {
     unlock_method = "DELETE"
   }
 resource "aws_s3_bucket" "example" {
-  bucket = "harness-bucket-practice-2"  # Replace with your desired bucket name
+  bucket = "harness-bucket-practice-3"  # Replace with your desired bucket name
 
   acl    = "private"  # You can adjust the ACL (Access Control List) as needed
 

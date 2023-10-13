@@ -1,7 +1,5 @@
-provider "aws" {
-  region = "us-east-1" # Modify with your desired AWS region
-}
-backend "http" {
+terraform {
+  backend "http" {
     address = TF_HTTP_ADDRESS
     username = "harness"
     password = TF_HTTP_PASSWORD
@@ -10,6 +8,10 @@ backend "http" {
     unlock_address = TF_HTTP_UNLOCK_ADDRESS
     unlock_method = "DELETE"
   }
+}
+provider "aws" {
+  region = "us-east-1" # Modify with your desired AWS region
+}
 resource "aws_s3_bucket" "example" {
   bucket = "harness-bucket-practice-3"  # Replace with your desired bucket name
 

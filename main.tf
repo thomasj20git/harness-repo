@@ -1,11 +1,11 @@
 terraform {
   backend "http" {
-    address = TF_HTTP_ADDRESS
+    address = "${harness_workspace.variable.TF_HTTP_ADDRESS}"
     username = "harness"
-    password = TF_HTTP_PASSWORD
-    lock_address = TF_HTTP_UNLOCK_ADDRESS
+    password = "${harness_workspace.variable.TF_HTTP_PASSWORD}"
+    lock_address = "${harness_workspace.variable.TF_HTTP_UNLOCK_ADDRESS}"
     lock_method = "POST"
-    unlock_address = TF_HTTP_UNLOCK_ADDRESS
+    unlock_address = "${harness_workspace.variable.TF_HTTP_UNLOCK_ADDRESS}"
     unlock_method = "DELETE"
   }
 }

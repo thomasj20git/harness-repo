@@ -26,6 +26,10 @@ resource "aws_s3_bucket" "example" {
   # acl    = "public-read"  # Vulnerability: Public ACL
   acl    = "private"  # You can adjust the ACL (Access Control List) as needed
 
+  versioning {
+    enabled = true
+  }
+
   tags = {
     Name = "My Example S3 Bucket"
   }

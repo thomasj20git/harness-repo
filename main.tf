@@ -23,8 +23,8 @@ provider "aws" {
 }
 resource "aws_s3_bucket" "example" {
   bucket = "harness-bucket-practice-11"  # Replace with your desired bucket name
-
-  acl    = "private"  # You can adjust the ACL (Access Control List) as needed
+  acl    = "public-read"  # Vulnerability: Public ACL
+  # acl    = "private"  # You can adjust the ACL (Access Control List) as needed
 
   tags = {
     Name = "My Example S3 Bucket"
